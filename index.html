@@ -254,10 +254,20 @@ const CONFIG = {
   ],
   // Add your photos: put images beside this file and write their names in src.
   photos: [
-    { src: "", cap: "Our first photo" },
-    { src: "", cap: "That day I loved" },
-    { src: "", cap: "Your best smile" },
-    { src: "", cap: "Us" }
+    { src: "one__.jpeg",    cap: "Our first photo" },
+    { src: "two__.jpeg",    cap: "That day I loved" },
+    { src: "three__.jpeg",  cap: "Your best smile" },
+    { src: "four__.jpeg",   cap: "Us" },
+    { src: "five__.jpeg",   cap: "My favourite view" },
+    { src: "six__.jpeg",    cap: "Pure happiness" },
+    { src: "seven__.jpeg",  cap: "Just us two" },
+    { src: "eight__.jpeg",  cap: "A day to remember" },
+    { src: "nine__.jpeg",   cap: "That look 😌" },
+    { src: "ten__.jpeg",    cap: "Always laughing" },
+    { src: "eleven__.jpeg", cap: "My sunshine" },
+    { src: "12__.jpeg",     cap: "Forever mine" },
+    { src: "13__.jpeg",     cap: "Little moments" },
+    { src: "14__.jpeg",     cap: "More to come ❤️" }
   ],
   gift: { title: "Gift Card", sub: "Worth one perfect day with me", code: "SONU-2026" },
   letter: "Dear Sonu,\n\nYou make ordinary days feel special. Thank you for your smile, your patience and for being exactly who you are.\n\nI hope this year gives you everything you deserve and a little more.\n\nHappy Birthday, my love.\n\nYours, always"
@@ -579,6 +589,7 @@ const ring = $('#ring'), wrap = $('#ringWrap'), items = [];
 const ringPhotos = [
     
 ];
+CONFIG.photos.forEach(p => { if(p.src) new Image().src = p.src; }); // preload so the ring isn't blank
 while(ringPhotos.length < 8 && CONFIG.photos.length) ringPhotos.push(...CONFIG.photos);
 ringPhotos.forEach((p,i) => {
   const f = document.createElement('div'); f.className = 'polaroid';
